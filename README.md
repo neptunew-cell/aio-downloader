@@ -92,7 +92,6 @@ https://www.youtube.com/watch?v=VIDEO_ID v 1080 60
 https://www.youtube.com/watch?v=VIDEO_ID v 4k
 https://www.youtube.com/watch?v=VIDEO_ID a max
 
-text
 
 - `v` = video, `a` = audio
 - Resolution: `max`, `min`, `1080`, `2k`, `4k`, etc.
@@ -113,7 +112,6 @@ text
 **Example:**
 https://www.instagram.com/p/DX2y7oLDFOb/, https://www.instagram.com/reel/DVRXhn0gjL3/, https://www.instagram.com/p/DX6US4uCNGb/
 
-text
 
 4. Click **"Run workflow"**
 5. When finished, the output ZIP will appear in the **`instagram/`** folder of your repository.
@@ -131,7 +129,6 @@ text
 **Example:**
 https://example.com/path/to/large-file.zip
 
-text
 
 4. Click **"Run workflow"**
 5. The file will be downloaded with 16 parallel connections and uploaded to the **`direct/`** folder of your repository, split into 99 MB parts if needed.
@@ -147,7 +144,6 @@ your-repository/
 ├── direct/
 │ └── filename.zip ← Direct downloads (split into parts if > 99 MB)
 
-text
 
 ### Inside the Instagram ZIP
 
@@ -159,7 +155,6 @@ instagram-content/
 ├── instagram_meme.azaad_...mp4
 └── ...
 
-text
 
 All files are flattened into a single folder for easy browsing. Filenames are prefixed with the uploader's username to avoid collisions.
 
@@ -295,7 +290,6 @@ https://www.youtube.com/watch?v=VIDEO_ID v 1080 60
 https://www.youtube.com/watch?v=VIDEO_ID v 4k
 https://www.youtube.com/watch?v=VIDEO_ID a max
 
-text
 
 - `v` = ویدیو، `a` = صدا
 - رزولوشن: `max`، `min`، `1080`، `2k`، `4k` و غیره.
@@ -316,7 +310,6 @@ text
 **مثال:**
 https://www.instagram.com/p/DX2y7oLDFOb/, https://www.instagram.com/reel/DVRXhn0gjL3/, https://www.instagram.com/p/DX6US4uCNGb/
 
-text
 
 4. روی **"Run workflow"** کلیک کنید.
 5. پس از اتمام، فایل ZIP خروجی در پوشه **`instagram/`** مخزن شما ظاهر می‌شود.
@@ -334,7 +327,6 @@ text
 **مثال:**
 https://example.com/path/to/large-file.zip
 
-text
 
 4. روی **"Run workflow"** کلیک کنید.
 5. فایل با ۱۶ اتصال موازی دانلود و در پوشه **`direct/`** مخزن شما آپلود می‌شود (در صورت نیاز به قطعات ۹۹ مگابایتی تقسیم می‌شود).
@@ -350,7 +342,6 @@ your-repository/
 ├── direct/
 │ └── filename.zip ← دانلودهای مستقیم (در صورت > 99MB به قطعات تقسیم می‌شوند)
 
-text
 
 ### داخل ZIP اینستاگرام
 
@@ -362,7 +353,6 @@ instagram-content/
 ├── instagram_meme.azaad_...mp4
 └── ...
 
-text
 
 تمام فایل‌ها برای مرور آسان در یک پوشه واحد قرار می‌گیرند. نام فایل‌ها با نام کاربری آپلودکننده پیشوندگذاری شده تا از تداخل جلوگیری شود.
 

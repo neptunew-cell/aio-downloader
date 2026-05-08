@@ -221,14 +221,14 @@ Add or remove usernames (with or without `@`). Only **public** channels work.
 
 ```
 [
-  "@VahidOOnLine",
+  "VahidOOnLine",
   "mwarmonitor",
-  "@pm_afshaa",
-  "@iaghapour",
-  "@DEJradio",
+  "pm_afshaa",
+  "iaghapour",
+  "DEJradio",
   "mamlekate",
   "VahidOnline",
-  "@kianmeli1"
+  "kianmeli1"
 ]
 ```
 
@@ -555,14 +555,14 @@ https://example.com/path/to/large-file.zip, https://example.com/another-file.mp4
 
 ```
 [
-  "@VahidOOnLine",
+  "VahidOOnLine",
   "mwarmonitor",
-  "@pm_afshaa",
-  "@iaghapour",
-  "@DEJradio",
+  "pm_afshaa",
+  "iaghapour",
+  "DEJradio",
   "mamlekate",
   "VahidOnline",
-  "@kianmeli1"
+  "kianmeli1"
 ]
 ```
 

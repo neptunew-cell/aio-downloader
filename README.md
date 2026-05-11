@@ -268,32 +268,44 @@ https://github.com/ProAlit/aio-downloader
 
 ### ۷. لیچر (Leecher) – میانبر + دستورات خام
 
-انعطاف‌پذیرترین گردش‌کار: هم حالت **میانبر (Shortcut)** مشابه دانلودر ساده یوتیوب (با `v/a رزولوشن fps`) و هم حالت **خام (Raw)** برای ارسال مستقیم گزینه‌های دلخواه `yt-dlp` پشتیبانی می‌کند. برای هر سایتی از لیست ۱۸۰۰+ سایت قابل استفاده است.
+💥 **قدرتمندترین گردش‌کار این مخزن!**  
+لیچر از `yt-dlp` پشتیبانی کامل می‌کند و تقریباً **هر لینکی** را می‌توانید به آن بدهید — از یوتیوب و توییتر گرفته تا اینستاگرام، تیک‌تاک، پینترست، ساندکلود، اسپاتیفای و **بیش از ۱۸۰۰ سایت دیگر**.  
+در اینجا نه محدود به یوتیوب هستید، نه به گزینه‌های از پیش تعریف‌شده. **همه چیز در کنترل شماست.**
 
-#### 🟢 حالت میانبر (Shortcut Mode)
+#### دو شیوه استفاده:
 
-درست مانند دانلودر یوتیوب، از فرمت **`URL v/a رزولوشن fps`** استفاده کنید.
+- **🟢 حالت میانبر (Shortcut):** درست مثل دانلودر یوتیوب — با فرمت `URL v/a رزولوشن fps` (راحت و سریع برای یوتیوب و چند سایت دیگر)
+- **🔴 حالت خام (Raw):** قدرت بی‌نهایت — با قرار دادن `--` در انتهای URL، هر گزینه معتبر `yt-dlp` را مستقیماً پاس می‌دهید. این یعنی می‌توانید فرمت، کوکی، زیرنویس، آرشیو، پلی‌لیست، محدودیت نرخ و … را کاملاً دستی تنظیم کنید.
 
-```
+---
+
+#### 🎯 مثال‌های جذاب از قدرت لیچر (حالت خام)
+
+| پلتفرم | نمونه دستور (داخل ورودی‌های workflow) |
+|--------|--------------------------------------|
+| **یوتیوب** – ویدیو با کیفیت 1080p + زیرنویس انگلیسی | `https://www.youtube.com/watch?v=VIDEO_ID -- --format "best[height<=1080]" --sub-lang en --write-subs` |
+| **اینستاگرام** – دانلود پست یا ریل (با کوکی) | `https://www.instagram.com/p/CODE -- --cookies cookies.txt --output "%(title)s.%(ext)s"` |
+| **تیک‌تاک** – دانلود ویدیو و ذخیره زیرنویس | `https://www.tiktok.com/@user/video/ID -- --write-subs --sub-lang en` |
+| **توییتر / X** – بهترین کیفیت موجود | `https://x.com/user/status/ID -- --format best` |
+| **پینترست** – دانلود تصویر | `https://www.pinterest.com/pin/ID -- --format best` |
+| **ساندکلاد** – استخراج صدا با کیفیت اصلی | `https://soundcloud.com/artist/track -- --format bestaudio` |
+| **اسپاتیفای** – (متادیتا) | `https://open.spotify.com/track/ID -- --print "%(title)s - %(artist)s"` |
+| **ویــمئو** – دانلود ویدیو با رزولوشن دلخواه | `https://vimeo.com/ID -- --format "best[height<=720]"` |
+| **دیلی‌موشن** – دانلود ویدیو | `https://www.dailymotion.com/video/ID -- --format best` |
+| **تلگرام (لینک عمومی)** – دانلود فایل از کانال عمومی | `https://t.me/channel/12345 -- --format best` |
+| **سایتهای مستهجن** – دانلود از سایتهای مستهجن | `لینک ویدئو` |
+
+> ℹ️ **نکته:** برای سایت‌هایی مثل اینستاگرام و تیک‌تاک که به کوکی نیاز دارند، ابتدا کوکی‌ها را به Secrets اضافه کنید (مطابق بخش ۳) و سپس در دستور `--cookies /path/to/cookies.txt` را قرار دهید. لیچر فایل کوکی را از Secret می‌خواند و در مسیر استاندارد ذخیره می‌کند.
+
+#### 🟢 حالت میانبر را فراموش نکنید:
++++
 https://www.youtube.com/watch?v=dfdXGw1xY9A v 1080
-https://www.youtube.com/watch?v=other_id a max
 https://soundcloud.com/artist/track a 320
-```
-
-#### 🔴 حالت خام (Raw Mode)
-
-وقتی به کنترل کامل نیاز دارید، در انتهای URL یک `--` قرار دهید و هر گزینه‌ی معتبر `yt‑dlp` را بعد از آن بنویسید.
-
-```
-https://www.youtube.com/watch?v=dQw4w9WgXcQ -- --format "best[height<=720]" --sub-lang en
-https://example.com/video -- --format bestvideo+bestaudio --write-subs
-```
++++
 
 1. به **Actions** → **leecher** بروید
-2. ورودی‌ها را وارد کنید (می‌توانید ترکیبی از هر دو حالت را با هم داشته باشید)
-3. خروجی در پوشه **`leecher/`** قرار می‌گیرد
-
-> 📋 **لیست کامل سایت‌های پشتیبانی‌شده توسط yt-dlp:** [اینجا کلیک کنید](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md)
+2. ورودی‌ها را وارد کنید (می‌توانید ترکیبی از لینک‌های میانبر و خام را با هم استفاده کنید)
+3. خروجی‌ها در پوشه **`leecher/`** قرار می‌گیرند
 
 ---
 
@@ -619,32 +631,44 @@ https://github.com/ProAlit/aio-downloader
 
 ### 7. Leecher – Shortcut + Raw Commands
 
-The most flexible workflow: supports both **Shortcut mode** (like the YouTube downloader with `v/a resolution fps`) and **Raw mode** (pass any custom `yt-dlp` options directly). Works for any URL from the 1,800+ supported sites.
+💥 **The most powerful workflow in this repo!**  
+Leecher fully harnesses `yt-dlp`, so you can throw almost **any link** at it — YouTube, Twitter, Instagram, TikTok, Pinterest, SoundCloud, Spotify, and **over 1,800 other sites**.  
+You are not limited to YouTube, nor to predefined settings. **You’re in full control.**
 
-#### 🟢 Shortcut Mode
+#### Two ways to use it:
 
-Exactly like the YouTube downloader — use the format **`URL v/a resolution fps`**.
+- **🟢 Shortcut Mode:** Just like the YouTube downloader — using the format `URL v/a resolution fps` (quick and simple for YouTube and similar)
+- **🔴 Raw Mode:** Limitless power — append `--` after the URL and pass any valid `yt-dlp` option directly. This means you can manually set formats, cookies, subtitles, archive, playlists, rate limits, and more.
 
-```
+---
+
+#### 🎯 Examples showcasing Leecher’s power (Raw mode)
+
+| Platform | Example command (paste into workflow input) |
+|----------|----------------------------------------------|
+| **YouTube** – 1080p video + English subs | `https://www.youtube.com/watch?v=VIDEO_ID -- --format "best[height<=1080]" --sub-lang en --write-subs` |
+| **Instagram** – Download post/reel (with cookies) | `https://www.instagram.com/p/CODE -- --cookies cookies.txt --output "%(title)s.%(ext)s"` |
+| **TikTok** – Download video & captions | `https://www.tiktok.com/@user/video/ID -- --write-subs --sub-lang en` |
+| **Twitter / X** – Best available resolution | `https://x.com/user/status/ID -- --format best` |
+| **Pinterest** – Get the image | `https://www.pinterest.com/pin/ID -- --format best` |
+| **SoundCloud** – Extract original audio | `https://soundcloud.com/artist/track -- --format bestaudio` |
+| **Spotify** – (metadata) | `https://open.spotify.com/track/ID -- --print "%(title)s - %(artist)s"` |
+| **Vimeo** – Download with custom resolution | `https://vimeo.com/ID -- --format "best[height<=720]"` |
+| **Dailymotion** – Download video | `https://www.dailymotion.com/video/ID -- --format best` |
+| **Telegram (public link)** – Grab file from public channel | `https://t.me/channel/12345 -- --format best` |
+| **Porn Downloader** – All Porn Websites | `Link To Video` |
+
+> ℹ️ **Note:** For sites like Instagram and TikTok that require cookies, first add your cookies to Secrets (section 3) and then include `--cookies /path/to/cookies.txt`. Leecher automatically reads the cookie secret and saves it in the expected location.
+
+#### 🟢 Don't forget Shortcut Mode:
++++
 https://www.youtube.com/watch?v=dfdXGw1xY9A v 1080
-https://www.youtube.com/watch?v=other_id a max
 https://soundcloud.com/artist/track a 320
-```
-
-#### 🔴 Raw Mode
-
-When you need full control, append `--` at the end of the URL and place any valid `yt‑dlp` options after it.
-
-```
-https://www.youtube.com/watch?v=dQw4w9WgXcQ -- --format "best[height<=720]" --sub-lang en
-https://example.com/video -- --format bestvideo+bestaudio --write-subs
-```
++++
 
 1. Go to **Actions** → **leecher**
-2. Enter your inputs (you can mix both modes in one run)
-3. Output appears in the **`leecher/`** folder
-
-> 📋 **Complete list of sites supported by yt-dlp:** [Click here](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md)
+2. Enter your inputs (you can mix shortcut and raw links in the same run)
+3. Outputs appear in the **`leecher/`** folder
 
 ---
 
